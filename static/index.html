@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reboot Profile - Night Blossoms</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <!-- Falling petals, drifting above everything -->
+  <canvas id="petal-canvas"></canvas>
+
+  <!-- LOGIN VIEW -->
+  <section id="login-view" class="login-container">
+    <!-- Elegant blossom tree background -->
+    <svg class="blossom-tree-svg" data-width="1000" data-height="800"></svg>
+
+    <!-- Moon -->
+    <div class="moon-glow"></div>
+
+    <div class="login-card">
+      <p class="login-eyebrow">A Nocturne</p>
+      <h1>Graphql</h1>
+      <p class="login-subtitle">Beneath the red moon, your grades blossom</p>
+      <div class="login-divider">
+        <span class="line"></span>
+        <span class="dot"></span>
+        <span class="line"></span>
+      </div>
+      <form id="login-form">
+        <div class="form-group">
+          <label for="identifier">Username or Email</label>
+          <input id="identifier" type="text" required />
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input id="password" type="password" required />
+        </div>
+
+        <button type="submit" class="btn-login">Login</button>
+      </form>
+      <p id="login-error" class="error-message"></p>
+    </div>
+  </section>
+
+  <!-- PROFILE VIEW -->
+  <div id="profile-view" class="profile-container" style="display:none;">
+    <!-- LEFT SIDEBAR -->
+    <aside class="sidebar">
+      <p class="sidebar-brand">Graphql</p>
+      <p class="sidebar-eyebrow">Night Blossoms</p>
+      <nav class="nav-menu">
+        <button class="nav-item active" data-section="basic-section">
+          <span class="nav-label">Profile</span>
+        </button>
+        <button class="nav-item" data-section="xp-section">
+          <span class="nav-label">XP Amount</span>
+        </button>
+        <button class="nav-item" data-section="progress-section">
+          <span class="nav-label">Grades</span>
+        </button>
+      </nav>
+      <button id="logout-button" class="logout-btn">Logout</button>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+      <header class="profile-header">
+        <p class="eyebrow">A Nocturne</p>
+        <h1 id="welcome-title">My Profile</h1>
+      </header>
+
+      <!-- SECTION 1: PROFILE -->
+      <section id="basic-section" class="content-section">
+        <h2>Profile</h2>
+        <div class="basic-grid">
+          <div class="info-card">
+            <ul id="basic-id" class="info-list"></ul>
+          </div>
+          <div class="info-card">
+            <ul id="basic-audit" class="info-list"></ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 2: XP Amount -->
+      <section id="xp-section" class="content-section">
+        <h2>XP Amount</h2>
+        <div class="stats-grid section-pair-grid">
+          <div class="info-card">
+            <ul id="xp-info" class="info-list"></ul>
+          </div>
+          <div class="graph-container">
+            <h3>XP by Project</h3>
+            <svg id="xp-by-project-graph" viewBox="0 0 900 400"></svg>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 3: GRADES -->
+      <section id="progress-section" class="content-section">
+        <h2>Grades</h2>
+        <div class="progress-filter">
+          <label for="progress-event-select">Change the event:</label>
+          <select id="progress-event-select"></select>
+        </div>
+        <div class="stats-grid section-pair-grid">
+          <div class="info-card">
+            <ul id="progress-info" class="info-list"></ul>
+          </div>
+          <div class="graph-container">
+            <h3>Solved / To Solve</h3>
+            <svg id="pass-fail-ratio-graph" viewBox="0 0 420 320"></svg>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- scripts -->
+  <script src="../js/blossom-tree.js"></script>
+  <script src="../js/petal-canvas.js"></script>
+  <script src="../js/config.js"></script>
+  <script src="../js/query.js"></script>
+  <script src="../js/graphs.js"></script>
+  <script src="../js/app.js"></script>
+  <script src="../js/sidebar.js"></script>
+</body>
+</html>
