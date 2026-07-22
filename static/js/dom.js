@@ -1,0 +1,15 @@
+const el = {
+  loginView: document.getElementById("login-view"),
+  profileView: document.getElementById("profile-view"),
+  loginForm: document.getElementById("login-form"),
+  identifier: document.getElementById("identifier"),
+  password: document.getElementById("password"),
+  loginError: document.getElementById("login-error"),
+  logoutButton: document.getElementById("logout-button"),
+  welcomeTitle: document.getElementById("welcome-title"),
+  basicId: document.getElementById("basic-id"),
+  basicAudit: document.getElementById("basic-audit"),
+  xpInfo: document.getElementById("xp-info"),
+  progressInfo: document.getElementById("progress-info"),
+  progressEventSelect: document.getElementById("progress-event-select"),
+};

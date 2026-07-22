@@ -126,7 +126,22 @@
   <script src="../js/config.js"></script>
   <script src="../js/query.js"></script>
   <script src="../js/graphs.js"></script>
-  <script src="../js/app.js"></script>
+
+  <!-- app modules: order matters (top-level code runs on load) -->
+  <script src="../js/dom.js"></script>
+  <script src="../js/state.js"></script>
+  <script src="../js/utils.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/ui.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/audit.js"></script>
+  <script src="../js/user.js"></script>
+  <script src="../js/xp.js"></script>
+  <script src="../js/grades-filter.js"></script>
+  <script src="../js/grades.js"></script>
+  <script src="../js/profile.js"></script>
+  <script src="../js/events.js"></script>
+
   <script src="../js/sidebar.js"></script>
 </body>
 </html>
