@@ -589,113 +589,6 @@ a {
   height: 100%;
 }
 
-.program-cohort-widget {
-  display: flex;
-  flex-direction: column;
-  gap: 0.9rem;
-}
-
-.program-cohort-title {
-  color: var(--moon);
-  margin-bottom: 0.05rem;
-  font-size: 0.92rem;
-  font-family: var(--font-sans);
-  font-weight: 500;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-.program-cohort-name {
-  font-size: 3rem;
-  color: var(--moon);
-  font-family: var(--font-sans);
-  font-weight: 400;
-  letter-spacing: 0.02em;
-  line-height: 1;
-}
-
-.program-cohort-heading {
-  display: flex;
-  align-items: center;
-  gap: 0;
-}
-
-.program-cohort-status-row {
-  display: flex;
-  align-items: center;
-  gap: 0;
-}
-
-.program-cohort-status {
-  display: inline-block;
-  align-self: flex-start;
-  padding: 0.45rem 0.9rem;
-  border-radius: 2px;
-  background: linear-gradient(90deg, var(--ember) 0%, var(--crimson) 100%);
-  color: var(--moon);
-  font-weight: 700;
-  font-size: 0.72rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.program-cohort-details {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.8rem;
-  margin-top: 0.2rem;
-}
-
-.program-cohort-detail-item {
-  display: flex;
-  flex-direction: column;
-  gap: 0.28rem;
-}
-
-.program-cohort-detail-label {
-  font-size: 0.82rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--gold);
-  font-weight: 600;
-}
-
-.program-cohort-detail-value {
-  font-size: 0.75rem;
-  color: var(--moon);
-  line-height: 1;
-  font-family: var(--font-sans);
-  font-weight: 400;
-  letter-spacing: 0.02em;
-}
-
-.program-cohort-cohorts-label {
-  margin-top: 0.25rem;
-  font-size: 0.82rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--gold);
-  font-weight: 600;
-}
-
-.program-cohort-cohort {
-  align-self: flex-start;
-  margin-top: -0.35rem;
-  color: var(--moon);
-  border: 1px solid rgba(201, 168, 106, 0.9);
-  padding: 0.34rem 0.9rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-}
-
-@media (max-width: 560px) {
-  .program-cohort-details {
-    grid-template-columns: 1fr;
-  }
-}
-
 /* STATISTICS SECTION */
 .stats-grid {
   display: grid;
@@ -874,10 +767,6 @@ svg {
   .info-card,
   .graph-container {
     padding: var(--spacing-md);
-  }
-
-  .program-cohort-name {
-    font-size: clamp(2rem, 12vw, 2.7rem);
   }
 
   .audit-ratio-number {

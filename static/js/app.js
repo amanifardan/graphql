@@ -5,13 +5,6 @@ const state = {
   selectedGradeEventKey: "all",
 };
 
-const profileMeta = {
-  currentProgram: "Module",
-  cohort: "Cohort4-SP7&8",
-  joinedAt: "14/04/2025",
-  expectedToFinish: "∞",
-};
-
 const el = {
   loginView: document.getElementById("login-view"),
   profileView: document.getElementById("profile-view"),
@@ -154,7 +147,8 @@ function renderUser(user) {
   const doneDisplay = formatDataSize(user.totalUp);
   const receivedDisplay = formatDataSize(user.totalDown);
 
-  el.basicId.appendChild(createProgramCohortWidget(profileMeta.currentProgram, profileMeta.cohort));
+  el.basicId.appendChild(createListItem("ID", user.id));
+  el.basicId.appendChild(createListItem("Login", user.login));
   el.basicAudit.appendChild(createAuditRatioWidget({
     doneAmount: user.totalUp,
     doneLabel: doneDisplay,
@@ -162,76 +156,6 @@ function renderUser(user) {
     receivedLabel: receivedDisplay,
     ratioLabel: auditRatioDisplay,
   }));
-}
-
-function createProgramCohortWidget(program, cohort) {
-  const wrap = document.createElement("div");
-  wrap.className = "program-cohort-widget";
-
-  const title = document.createElement("h3");
-  title.className = "program-cohort-title";
-  title.textContent = "Current program";
-
-  const programName = document.createElement("p");
-  programName.className = "program-cohort-name";
-  programName.textContent = String(program || "-");
-
-  const programHeading = document.createElement("div");
-  programHeading.className = "program-cohort-heading";
-  programHeading.appendChild(programName);
-
-  const status = document.createElement("span");
-  status.className = "program-cohort-status";
-  status.textContent = "IN PROGRESS";
-
-  const statusRow = document.createElement("div");
-  statusRow.className = "program-cohort-status-row";
-  statusRow.appendChild(status);
-
-  const details = document.createElement("div");
-  details.className = "program-cohort-details";
-
-  const joinedItem = document.createElement("div");
-  joinedItem.className = "program-cohort-detail-item";
-  const joinedLabel = document.createElement("p");
-  joinedLabel.className = "program-cohort-detail-label";
-  joinedLabel.textContent = "Join at";
-  const joinedValue = document.createElement("p");
-  joinedValue.className = "program-cohort-detail-value";
-  joinedValue.textContent = profileMeta.joinedAt;
-  joinedItem.appendChild(joinedLabel);
-  joinedItem.appendChild(joinedValue);
-
-  const expectedItem = document.createElement("div");
-  expectedItem.className = "program-cohort-detail-item";
-  const expectedLabel = document.createElement("p");
-  expectedLabel.className = "program-cohort-detail-label";
-  expectedLabel.textContent = "Expect to finish";
-  const expectedValue = document.createElement("p");
-  expectedValue.className = "program-cohort-detail-value";
-  expectedValue.textContent = profileMeta.expectedToFinish;
-  expectedItem.appendChild(expectedLabel);
-  expectedItem.appendChild(expectedValue);
-
-  details.appendChild(joinedItem);
-  details.appendChild(expectedItem);
-
-  const cohortLabel = document.createElement("p");
-  cohortLabel.className = "program-cohort-cohorts-label";
-  cohortLabel.textContent = "My cohorts";
-
-  const cohortValue = document.createElement("p");
-  cohortValue.className = "program-cohort-cohort";
-  cohortValue.textContent = String(cohort || "-");
-
-  wrap.appendChild(title);
-  wrap.appendChild(programHeading);
-  wrap.appendChild(statusRow);
-  wrap.appendChild(details);
-  wrap.appendChild(cohortLabel);
-  wrap.appendChild(cohortValue);
-
-  return wrap;
 }
 
 function createAuditRatioWidget({ doneAmount, doneLabel, receivedAmount, receivedLabel, ratioLabel }) {
